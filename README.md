@@ -11,7 +11,7 @@ step 3:	Run clean.py python3 module to clean and remove unnecessary information 
 
 step 4:	CleanTextFile.txt will be generated from step-3.
 
-step 4:	Run Summary1.ipynb finally(file(CleanTextFile.txt) is already provided just run the program).
+step 4:	Run Summary.ipynb finally(file(CleanTextFile.txt) is already provided just run the program).
 
 step 5:	The output represents the respective important keywords of the given document.
 
