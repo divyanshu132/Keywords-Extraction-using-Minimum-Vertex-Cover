@@ -1,0 +1,43 @@
+import re
+fp=open('doc.txt')
+c=len(open('doc.txt').readlines())
+text=fp.read().splitlines()
+
+with open('CleanTextFile.txt','w') as f: 
+    for i in range(c):
+        text[i]=re.sub("\d+","",text[i])
+        text[i]=re.sub(r"[^A-Za-z0-9^,!.\/'+-=]", " ", text[i])
+        text[i]=re.sub(r"what's", "what is", text[i])
+        text[i] = re.sub(r"\'s", " ", text[i])
+        text[i] = re.sub(r"\'ve", " have ", text[i])
+        text[i] = re.sub(r"can't", "cannot ", text[i])
+        text[i] = re.sub(r"n't", " not ", text[i])
+        text[i] = re.sub(r"i'm", "i am ", text[i])
+        text[i] = re.sub(r"\'re", " are ", text[i])
+        text[i] = re.sub(r"\'d", " would ", text[i])
+        text[i] = re.sub(r"\'ll", " will ", text[i])
+        text[i] = re.sub(r",", " ", text[i])
+        #text[i] = re.sub(r"\.", " ", text[i])
+        text[i] = re.sub(r"!", " ! ", text[i])
+        text[i] = re.sub(r"\/", " ", text[i])
+        text[i] = re.sub(r"\^", " ^ ", text[i])
+        text[i] = re.sub(r"\+", " + ", text[i])
+        text[i] = re.sub(r"\-", " - ", text[i])
+        text[i] = re.sub(r"\=", " = ", text[i])
+        text[i] = re.sub(r"'", " ", text[i])
+        text[i] = re.sub(r"(\d+)(k)", r"\g<1>000", text[i])
+        text[i] = re.sub(r":", " : ", text[i])
+        text[i] = re.sub(r" e g ", " eg ", text[i])
+        text[i] = re.sub(r" b g ", " bg ", text[i])
+        text[i] = re.sub(r" u s ", " american ", text[i])
+        text[i] = re.sub(r"\0s", "0", text[i])
+        text[i] = re.sub(r" 9 11 ", "911", text[i])
+        text[i] = re.sub(r"e - mail", "email", text[i])
+        text[i] = re.sub(r"j k", "jk", text[i])
+        text[i] = re.sub(r"\s{2,}", " ", text[i])
+        #print(text[i]+"\n")
+        f.write(text[i])
+        f.write("\n")
+   
+    
+    
